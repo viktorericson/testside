@@ -1,0 +1,12 @@
+{%extends "base.html"%}{%block body%}
+
+<form method="post">
+    <label for="name">Brugernavn</label> <br />
+    <input id="name" type="text" name="brugernavn" /><br />
+    <label for="pass">Password</label> <br />
+    <input id="pass" name="pass" type="password" /><br />
+    <input type="submit" value="Login" />
+    <input type="submit" value="Register" />
+</form>
+
+{%endblock%}
