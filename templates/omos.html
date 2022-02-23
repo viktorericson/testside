@@ -1,0 +1,12 @@
+{% extends "base.html" %}{%block body%}
+<form action="" method="post">
+    <input placeholder="Name" name="name" type="text" />
+    <input placeholder="post" name="post" type="text" />
+    <input type="submit" />
+</form>
+{%for post in posts%}
+<div>
+    <p>{{post[1] + ":" + post[2]}}</p>
+</div>
+
+{%endfor%} {%endblock%}

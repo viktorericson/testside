@@ -15,6 +15,14 @@ cursor = mydb.cursor()
 
 mysql = MySQL(app)
 
+def create_post(name,post):
+    cursor.execute("INSERT INTO omos (name,post) VALUES (%s,%s)",(name,post))
+    mydb.commit()
+
+def get_posts():
+    cursor.execute("SELECT * FROM omos")
+    posts = cursor.fetchall()
+    return posts
 
 def user_login(username, password):
     cursor.execute("SELECT * FROM bruger WHERE username LIKE (%s) AND passwd LIKE (%s)",(username, password))

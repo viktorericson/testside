@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,redirect,session
-from db import cursor, mydb, create_user,user_login
+from db import cursor, mydb, create_user,user_login,create_post,get_posts
 
 app = Flask(__name__)
 
@@ -39,6 +39,16 @@ def register():
     return render_template('register.html')
 
 
-
+@app.route('/omos',methods=['POST',"GET"])
+def omos():
+    if request.method == 'GET':
+        pass
+    if request.method == 'POST':
+        name = request.form["name"]
+        post = request.form["post"]
+        create_post(name,post)
+    posts=get_posts()
+    return render_template('omos.html',posts=posts)
+    
 if __name__ == '__main__':
     app.run()
