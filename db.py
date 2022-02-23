@@ -16,9 +16,20 @@ cursor = mydb.cursor()
 mysql = MySQL(app)
 
 
+def user_login(username, password):
+    cursor.execute("SELECT * FROM bruger WHERE username LIKE (%s) AND passwd LIKE (%s)",(username, password))
+    bruger = cursor.fetchone()
+    print (bruger)
+    return bruger
 
-cursor.execute("INSERT INTO bruger (username, passwd) VALUES (%s, %s)",("viktwor","viktor"))
 
+def create_user(username, password):
+    cursor.execute("INSERT INTO bruger (username, passwd) VALUES (%s,%s)",(username, password))
+    mydb.commit()
+
+
+
+#cursor.execute("INSERT INTO bruger (username, passwd) VALUES (%s, %s)",("diller","pepepe"))
 
 
 mydb.commit()
