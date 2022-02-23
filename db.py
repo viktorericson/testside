@@ -15,6 +15,10 @@ cursor = mydb.cursor()
 
 mysql = MySQL(app)
 
-cursor.execute("SHOW DATABASES")
-for db in cursor:
-    print(db)
+
+
+cursor.execute("INSERT INTO bruger (username, passwd) VALUES (%s, %s)",("viktwor","viktor"))
+
+
+
+mydb.commit()
