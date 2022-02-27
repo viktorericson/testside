@@ -24,7 +24,7 @@ def login():
             return redirect("/login")
         else:
             return "not logged in"
-    return render_template('login.html',username=session["username"])
+    return render_template('login.html')
 
 
 
