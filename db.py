@@ -12,7 +12,7 @@ mydb = mysql.connector.connect(
     database="hjemmeside"
     )
 cursor = mydb.cursor()
-
+print("hej")
 mysql = MySQL(app)
 
 def create_post(name,post):
